@@ -1,8 +1,8 @@
 import { Inter as FontSans } from 'next/font/google';
 import localFont from 'next/font/local';
 
-import SetupConfig from '@/components/SetupConfig';
-import { TailwindIndicator } from '@/components/TailwindIndicator';
+import SetupConfig from '@/components/setup-config';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 // import { ThemeProvider } from '@/components/ThemeProvider';
 

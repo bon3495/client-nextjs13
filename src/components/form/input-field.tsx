@@ -54,7 +54,7 @@ const InputField = <
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   return (
-    <div className={cn('flex flex-col', wrapperClassName)}>
+    <div className={cn('flex flex-col items-start', wrapperClassName)}>
       {label && (
         <Label
           htmlFor={id}
@@ -63,7 +63,7 @@ const InputField = <
           {label}
         </Label>
       )}
-      <div className="relative">
+      <div className="relative w-full">
         {type === 'password' && (
           <Button
             variant="logo"
@@ -71,6 +71,7 @@ const InputField = <
             onClick={() => setIsShowPassword(prev => !prev)}
             className="absolute -translate-y-1/2 right-3 top-1/2 peer"
             tabIndex={2}
+            type="button"
           >
             {isShowPassword ? (
               <Icons.eyeShow className="w-5 h-5" />
@@ -91,7 +92,10 @@ const InputField = <
             extendOnchange?.(e.target);
           }}
           error={error?.message}
-          className={cn('peer-hover:border-ring pr-[60px]', className)}
+          className={cn(
+            { 'peer-hover:border-ring pr-[60px]': type === 'password' },
+            className
+          )}
           tabIndex={1}
         />
       </div>

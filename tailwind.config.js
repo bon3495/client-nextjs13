@@ -7,16 +7,23 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/content/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: ['class'],
   theme: {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+    },
+    screens: {
+      ssm: '400px',
+      sm: '480px',
+      md: '640px',
+      '2md': '768px',
+      lg: '1024px',
+      '2lg': '1220px',
+      xl: '1366px',
+      '2xl': '1620px',
     },
     extend: {
       colors: {
@@ -62,6 +69,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         heading: ['var(--font-heading)', ...fontFamily.sans],
+        dancing: ['var(--font-dancing)', ...fontFamily.sans],
       },
       keyframes: {
         'accordion-down': {
@@ -76,6 +84,9 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backgroundImage: {
+        auth: 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)',
       },
     },
   },

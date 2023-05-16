@@ -1,4 +1,7 @@
-import { Inter as FontSans } from 'next/font/google';
+import {
+  Dancing_Script as FontDancing,
+  Inter as FontSans,
+} from 'next/font/google';
 import localFont from 'next/font/local';
 
 import SetupConfig from '@/components/setup-config';
@@ -13,6 +16,11 @@ import { cn } from '@/lib/utils';
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
+});
+
+const fontDancing = FontDancing({
+  subsets: ['latin'],
+  variable: '--font-dancing',
 });
 
 // Font files can be colocated inside of `pages`
@@ -48,7 +56,8 @@ export default function RootLayout({
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
           fontSans.variable,
-          fontHeading.variable
+          fontHeading.variable,
+          fontDancing.variable
         )}
       >
         <SetupConfig>

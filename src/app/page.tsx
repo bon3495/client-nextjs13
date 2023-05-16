@@ -1,11 +1,5 @@
-import Form from '@/content/Form';
-
 const Home = () => {
-  return (
-    <div className="container flex justify-center">
-      <Form />
-    </div>
-  );
+  return <div className="container flex justify-center">Comming soon...</div>;
 };
 
 export default Home;

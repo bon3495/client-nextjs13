@@ -1,49 +1,44 @@
-import { Metadata } from "next"
-import Link from "next/link"
+import { Metadata } from 'next';
+import Link from 'next/link';
+import LoginForm from '@/containers/auth/login-form';
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
+import { Icons } from '@/components/icons';
 
 export const metadata: Metadata = {
-  title: "Login",
-  description: "Login to your account",
-}
+  title: 'Login',
+  description: 'Login to your account',
+};
 
 export default function LoginPage() {
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center">
-      <Link
-        href="/"
-        className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
-        )}
-      >
-        <>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          Back
-        </>
-      </Link>
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-        <div className="flex flex-col space-y-2 text-center">
-          <Icons.logo className="mx-auto h-6 w-6" />
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Enter your email to sign in to your account
+    <section className="container flex flex-col items-center justify-center w-screen h-screen">
+      <div className="relative z-10 w-full max-w-[420px] rounded-lg bg-white p-4 shadow-form backdrop-blur-2xl sm:p-8 md:max-w-[550px] shadow-2xl">
+        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[380px]">
+          <div className="flex flex-col space-y-2 text-center">
+            <h1 className="mx-auto text-3xl font-bold w-fit font-dancing text-primary sm:text-5xl">
+              Welcome back
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Enter your email to sign in to your account
+            </p>
+          </div>
+          <LoginForm />
+
+          <p className="relative my-3 text-center before:absolute before:left-0 before:top-1/2 before:block before:h-[1px] before:w-[40%] before:-translate-y-1/2 before:bg-border before:content-[''] after:absolute after:right-0 after:top-1/2 after:block after:h-[1px] after:w-[40%] after:-translate-y-1/2 after:bg-border after:content-[''] sm:my-5 before:sm:w-[32%] after:sm:w-[32%]">
+            <span className="relative z-10 px-3 text-sm text-ring">
+              Or continue with
+            </span>
+          </p>
+          <p className="px-8 text-sm text-center text-muted-foreground">
+            <Link
+              href="/register"
+              className="underline hover:text-brand underline-offset-4"
+            >
+              Don&apos;t have an account? Sign Up
+            </Link>
           </p>
         </div>
-        <p className="px-8 text-center text-sm text-muted-foreground">
-          <Link
-            href="/register"
-            className="hover:text-brand underline underline-offset-4"
-          >
-            Don&apos;t have an account? Sign Up
-          </Link>
-        </p>
       </div>
-    </div>
-  )
+    </section>
+  );
 }

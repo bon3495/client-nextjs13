@@ -24,12 +24,17 @@ const LoginForm: FC<ILoginFormProps> = ({}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-4"
+      id="authLoginForm"
+    >
       <InputField
         name="email"
         control={control}
         placeholder="email@example.com"
         id="authLoginEmail"
+        autoComplete="username"
       />
       <InputField
         name="password"
@@ -37,6 +42,7 @@ const LoginForm: FC<ILoginFormProps> = ({}) => {
         placeholder="Enter your password"
         type="password"
         id="authLoginPassword"
+        autoComplete="current-password"
       />
 
       <Button>Sign In with Email</Button>

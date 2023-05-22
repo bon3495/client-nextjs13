@@ -9,6 +9,7 @@ class SetupConfig {
   public NEXTAUTH_SECRET: string | undefined;
   public GOOGLE_CLIENT_ID: string | undefined;
   public GOOGLE_CLIENT_SECRET: string | undefined;
+  public NEXT_PUBLIC_APP_DEBUG_API: string | undefined;
   // public DATABASE_URL: string | undefined;
 
   constructor() {
@@ -18,6 +19,8 @@ class SetupConfig {
     this.NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET || '';
     this.GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
     this.GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
+    this.NEXT_PUBLIC_APP_DEBUG_API =
+      process.env.NEXT_PUBLIC_APP_DEBUG_API || '';
     // this.DATABASE_URL = process.env.DATABASE_URL || '';
   }
 

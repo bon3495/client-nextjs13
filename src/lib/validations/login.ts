@@ -1,10 +1,33 @@
-import * as z from 'zod';
+import { z } from 'zod';
 
-export const userAuthSchema = z.object({
-  email: z.string().email('Please use a valid email address.'),
+import { USER_NAME_MAX_LENGTH, USER_NAME_MIN_LENGTH } from '@/config/constants';
+
+export const LogInSchema = z.object({
+  username: z
+    .string({
+      required_error: 'Username is a required field',
+      invalid_type_error: 'Username must be of type string',
+    })
+    .trim()
+    .min(USER_NAME_MIN_LENGTH, {
+      message: `Username must be ${USER_NAME_MIN_LENGTH} or more characters long`,
+    })
+    .max(USER_NAME_MAX_LENGTH, {
+      message: `Username must be ${USER_NAME_MAX_LENGTH} or fewer characters long`,
+    }),
+
   password: z
-    .string()
-    .min(4, 'Password must be at least 4 characters in length.'),
+    .string({
+      required_error: 'Password is a required field',
+      invalid_type_error: 'Password must be of type string',
+    })
+    .trim()
+    .min(USER_NAME_MIN_LENGTH, {
+      message: `Password must be ${USER_NAME_MIN_LENGTH} or more characters long`,
+    })
+    .max(USER_NAME_MAX_LENGTH, {
+      message: `Password must be ${USER_NAME_MAX_LENGTH} or fewer characters long`,
+    }),
 });
 
-export type UserAuthSchema = z.infer<typeof userAuthSchema>;
+export type TLogInSchema = z.infer<typeof LogInSchema>;

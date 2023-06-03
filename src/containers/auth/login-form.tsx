@@ -4,22 +4,22 @@ import { FC } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
-import { userAuthSchema, UserAuthSchema } from '@/lib/validations/login';
-import { Button } from '@/components/ui/button';
+import { LogInSchema, TLogInSchema } from '@/lib/validations/login';
 import { InputField } from '@/components/form';
+import { Button } from '@/components/ui/button';
 
 interface ILoginFormProps {}
 
 const LoginForm: FC<ILoginFormProps> = ({}) => {
-  const { handleSubmit, control } = useForm<UserAuthSchema>({
-    resolver: zodResolver(userAuthSchema),
+  const { handleSubmit, control } = useForm<TLogInSchema>({
+    resolver: zodResolver(LogInSchema),
     defaultValues: {
-      email: '',
+      username: '',
       password: '',
     },
   });
 
-  const onSubmit = (data: UserAuthSchema) => {
+  const onSubmit = (data: TLogInSchema) => {
     console.log(data);
   };
 
@@ -30,10 +30,10 @@ const LoginForm: FC<ILoginFormProps> = ({}) => {
       id="authLoginForm"
     >
       <InputField
-        name="email"
+        name="username"
         control={control}
-        placeholder="email@example.com"
-        id="authLoginEmail"
+        placeholder="Enter your user name"
+        id="authLoginUserName"
         autoComplete="username"
       />
       <InputField
@@ -45,7 +45,13 @@ const LoginForm: FC<ILoginFormProps> = ({}) => {
         autoComplete="current-password"
       />
 
-      <Button>Sign In with Email</Button>
+      <Button>
+        {/* {isLoading ? (
+          <Icons.spinner className="w-4 h-4 animate-spin" />
+        ) : ( */}
+        Sign In
+        {/* )} */}
+      </Button>
     </form>
   );
 };

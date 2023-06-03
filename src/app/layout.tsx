@@ -4,15 +4,15 @@ import {
 } from 'next/font/google';
 import localFont from 'next/font/local';
 
-// import { ThemeProvider } from '@/components/ThemeProvider';
-
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+// import { ThemeProvider } from '@/components/ThemeProvider';
+
 import SetupConfig from '@/components/setup-config';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
+import Providers from '@/app/providers';
 
 import '@/styles/globals.css';
-import Providers from '@/app/providers';
 
 const fontSans = FontSans({
   subsets: ['latin'],

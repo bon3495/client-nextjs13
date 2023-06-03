@@ -1,11 +1,11 @@
 import Image from 'next/image';
+
 import bgIcon1 from '@/assets/images/auth-bg-1.svg';
 import bgIcon2 from '@/assets/images/auth-bg-2.svg';
 import bgIcon3 from '@/assets/images/auth-bg-3.svg';
 import bgIcon4 from '@/assets/images/auth-bg-4.svg';
 import bgIcon5 from '@/assets/images/auth-bg-5.svg';
 import bgIcon6 from '@/assets/images/auth-bg-6.svg';
-
 import { cn } from '@/lib/utils';
 
 interface AuthLayoutProps {

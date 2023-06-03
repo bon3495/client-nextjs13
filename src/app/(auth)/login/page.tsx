@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import LoginForm from '@/containers/auth/login-form';
 
-import { Icons } from '@/components/icons';
+import LoginForm from '@/containers/auth/login-form';
 
 export const metadata: Metadata = {
   title: 'Login',
